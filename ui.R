@@ -12,10 +12,10 @@ shinyUI(
     width = 250,
     sidebarMenu(
       menuItem("Overview", tabName = "home", icon = icon("book")),
-      menuItem("Regional Facts", tabName = "facts", icon = icon("bar-chart-o")),
-      menuItem("Caner Rates vs. Age Group", tabName = "annual", icon = icon("line-chart")),
-      menuItem("Top 10 Cancers", tabName = "top10", icon = icon("chart-area")),
-      menuItem("Facts by Type, Gender, and Race", tabName = "old", icon = icon("chart-pie"))
+      menuItem("State Cancer Rates", tabName = "facts", icon = icon("bar-chart-o")),
+      menuItem("Caner Rates per Age Group", tabName = "annual", icon = icon("line-chart")),
+      menuItem("Top 10 Cancers by State", tabName = "top10", icon = icon("chart-area")),
+      menuItem(text = HTML("Cancer Rates by Cancer Type,</br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  Race, and Gender"), tabName = "old", icon = icon("chart-pie"))
                      
       
     )
@@ -29,25 +29,27 @@ shinyUI(
                 column(width = 6, 
                        box(height = 950, 
                          title = h2(strong("Overview")), width = NULL, solidHeader = TRUE, background = "navy", 
-                          tags$h4("Cancer statistics provide things such as the number of people diagnosed with and die from cancer each year, and 
-                                   they also show differences among the age group, gender, race, location, etc. This shiny project was conducted 
-                                    to provide such cancer statistics with various visualizations. For a better understanding of the influence of age, sex, and race on the incidence and mortality of cancers, 
-                                   four separate analyses were performed and summarized as follows:"),
+                          tags$h4("Cancer statistics basically describe what happens in large groups of populations and provide a big picture 
+                                   in time of the burden of cancer on society. More specifically, cancer statistics provide the number of people diagnosed with 
+                                    and who die from cancer each year. They also show differences of incidence and mortality among the age group, gender, race, location, and cancer type. 
+                                   This Shiny project was conducted to provide such cancer statistics with various visualizations. For a better understanding of the influence of 
+                                   age, race, sex, and region on the incidence and mortality of cancers, the listed analyses below were performed.
+                                  "),
                           br(),
                           
                           tags$ol(
-                                  h4(tags$li("Regional Facts ")),
-                                  h4(tags$li("Cancer Rates vs. Age Group")),
-                                  h4(tags$li("Top 10 Cancers")),
-                                  h4(tags$li("Facts by Type, Gender, and Race"))
+                                  h4(tags$li("State Cancer Rates")),
+                                  h4(tags$li("Cancer Rates per Age Group")),
+                                  h4(tags$li("Top 10 Cancers by State")),
+                                  h4(tags$li("Cancer Rates by Cancer Type, Race, and Gender"))
                                   ),
                           br(),
-                          tags$h4("'Regional Facts' section provides state cancer incidence and mortality variation over the year from 1999 to 2015. 
-                          'Cancer Rates vs. Age Group' shows normalized cancer incidence and mortality rate by the 19 age groups and the rate distribution in each age group.        
-                          'Top 10 Cancers' section shows the top 10 cancer types by state, race, sex, and year, and        
-                          'Facts by Type, Gender, and Race' section shows the cancer incidence and mortality rates for cancer type. 
-                          Note that users can find a cancer rate of interest using the provided filters in each section."),
-                          HTML('<center><img src = "https://live.staticflickr.com/807/40379829875_8a7cc48b0f_b.jpg" width ="75%"></center>'),
+                          tags$h4("'State Cancer Rates' section provides state cancer incidence and mortality rates for the years from 1999 to 2015. 
+                          'Cancer Rates per Age Group' section shows caner rate distributions and normalized rates per age group.        
+                          'Top 10 Cancers by State' section displays the top 10 cancer cases and cancer deaths in each state.       
+                          'Cancer Rates by Cancer Type, Race, and Gender' section exhibits incidence (or mortality) percentage of the five age groups for a specific cancer type. 
+                          "),
+                          HTML('<center><img src = "http://nycdatascience.com/blog/wp-content/uploads/2019/06/mitosis-3876669_1280.jpg" width ="75%"></center>'),
                            
                           tags$h4("Figure. Cancer cells illustration", align = "center")
                           
@@ -58,17 +60,16 @@ shinyUI(
                        box(height = 500,
                          title = h2(strong("Summary of Findings")), width = NULL, solidHeader = TRUE, background = "navy",
                          tags$ol(
-                         h4(tags$li("The results show that cancer impacts people of all ages, races, and sexes, but it does not
-                                    always affect them equally. Differences in genetics, hormones, environmental exposures, 
+                         h4(tags$li("The results clearly show that cancer impacts people of all ages, but it does not always affect them equally. Differences in genetics, hormones, environmental exposures, 
                                     and other factors can lead to differences in risk among different groups of people. 
                                     For most cancers, though, increasing age is the most important risk factor.")),
                          h4(tags$li("The results also show that cancer incidence and mortality rates are increasing over the years. 
-                                    This might result from the size of the population is growing and aging each year.")),
+                                    This might result from the increased population size and the aged population each year.")),
                          h4(tags$li("The most common cancers in each state are breast cancer, lung and bronchus cancer, 
                                     prostate cancer, colon and rectum cancer, melanoma of the skin, corpus and uterus cancer, and bladder cancer.")),
                          h4(tags$li("Men's cancer rates are higher than women's rates. When comparing groups based on race and sex, the cancer mortality rate is 
                                     highest in African American men and lowest in Asian/Pacific Islander women.")),
-                         h4(tags$li("The majority age group of thyroid and testis cancers is 30 - 49 (years), while the majority age group of the other cancers is 65+ (years).")),
+                         h4(tags$li("The primary age group for thyroid and testis cancers is 30 - 49 (years), while the majority age group of the other cancers is 65+ (years).")),
                          h4(tags$li("The mortality rate of lung and bronchus cancer has been decreased over the years, 
                                     but lung and bronchus cancer had the highest mortality rate in 2015."))
                          )
