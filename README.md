@@ -4,6 +4,8 @@
 
 This repository contains an interactive US cancer statistic Shiny app. The primary purpose of this app is to provide a comprehensive cancer incidence and Mortaility rates in the US by region, age group, gender, and race. 
 
+More detailed information is shown in the [blog](https://nycdatascience.com/blog/student-works/us-cancer-statistics/)
+
 
 ## Shiny app address
 
